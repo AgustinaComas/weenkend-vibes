@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Weenkend-Vibes",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
