@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, LOCALE_ID, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-eventos',
@@ -10,7 +11,9 @@ export class EventosPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  
   }
   
+
 
 }
