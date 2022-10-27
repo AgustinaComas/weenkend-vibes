@@ -26,6 +26,7 @@ export class InicioPage implements OnInit {
       Descripcion: 'Distruta de esta pelicula en familia en el cine',
       Imagen: "minions.img"
      },
+     
   ]
   
  

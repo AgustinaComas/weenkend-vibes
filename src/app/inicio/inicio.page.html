@@ -8,8 +8,8 @@
     <ion-searchbar placeholder="Busca un evento"></ion-searchbar>
 
     <ion-item  [routerLink]="['/eventos']" *ngFor="let item of Evento"> 
-      <ion-thumbnail class="Evento" slot="start">
-        <img src="../../assets/eventos-img/{{ item.Imagen }}" />
+      <ion-thumbnail  slot="start">
+        <img src="../../assets/eventos-img/{{ item.Imagen }}" class="Evento" />
       </ion-thumbnail>
       <ion-label>
         <h1>{{ item.Nombre }}</h1> 
