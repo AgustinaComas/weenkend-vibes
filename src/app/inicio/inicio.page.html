@@ -1,13 +1,15 @@
-<ion-header>
-  
+<ion-header no-border>
+  <ion-toolbar >
+    <h1 class="titulo"> Todos los eventos </h1>
+    <ion-searchbar search-icon="search-outline" placeholder="Busca un evento" clear-icon="close-circle-outline"
+    animated (ionChange)="searchEvents($event)" >
+  </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <h1 class="titulo"> Todos los eventos </h1>
-    <ion-searchbar placeholder="Busca un evento"></ion-searchbar>
-
-    <ion-item  [routerLink]="['/eventos']" *ngFor="let item of Evento"> 
+    <ion-item  [routerLink]="['/eventos']" *ngFor="let item of searchedEvento" > 
       <ion-thumbnail  slot="start">
         <img src="../../assets/eventos-img/{{ item.Imagen }}" class="Evento" />
       </ion-thumbnail>

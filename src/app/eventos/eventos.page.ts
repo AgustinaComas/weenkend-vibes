@@ -8,12 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EventosPage implements OnInit {
 
-  constructor() { }
+  constructor(private ar:ActivatedRoute) { }
 
   ngOnInit() {
-  
+  this.ar.params.subscribe (
+    (route)=> console.log(route)
+  )
   }
-  
-
+ 
 
 }

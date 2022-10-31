@@ -15,9 +15,13 @@ const routes: Routes = [
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'eventos',
+    path: ':evento',
     loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
+  },  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
   }
+
 
 
 ];

@@ -10,22 +10,23 @@ export class InicioPage implements OnInit {
   Evento: Array<any> = [
     { 
       Id: 0,
-      Nombre: "Disiplina tour Lali", 
+      Nombre: "Disciplina tour Lali", 
       Descripcion: "Show imperdible",
       Imagen: "lalitour.img"
     },
     { 
-      id: 1,
+      Id: 1,
       Nombre: "Otto jueves", 
       Descripcion: 'La fija del jueves',
       Imagen: "otto.img"
      },
      { 
-      id: 2,
+      Id: 2,
       Nombre: "Minions: nace un villano", 
       Descripcion: 'Distruta de esta pelicula en familia en el cine',
       Imagen: "minions.img"
      },
+     
      
   ]
   
@@ -35,8 +36,21 @@ export class InicioPage implements OnInit {
   goToPage(pageName:string):void{
     this.router.navigate(['${pageName}']);
   }
+ Eventos: any[] = [];
+ searchedEvento: any;
 
+  searchEvents(event){
+    const text = event.target.value;
+    this.searchedEvento = this.Evento;
+    if(text && text.trim() !=''){
+      this.searchedEvento = this.searchedEvento.filter((Eventos: any)=>{
+        return (Eventos.name.toLowerCase().indexOf(text.toLowerCase()) > -1);
+      })
+    }
+  }
   ngOnInit() {
+    this.searchedEvento = this.Evento;
+    
   }
 
 }

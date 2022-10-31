@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('../inicio/inicio.module').then(m => m.InicioPageModule)
       },
       {
+        path: 'calendario',
+        loadChildren: () => import('../calendario/calendario.module').then(m => m.CalendarioPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/inicio',
         pathMatch: 'full'
