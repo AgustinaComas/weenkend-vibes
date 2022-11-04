@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Mas informacion </ion-title>
+    <h1 class="titulo"> Mas información </h1>
     <ion-buttons slot="start">
       <ion-back-button 
       text=""
@@ -14,20 +14,17 @@
  
 
 <ion-content>
-
-  <h1 class="titulo"> Titulo del evento <ion-icon name="heart-outline"></ion-icon></h1> 
  
   <ion-card>
-   <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+   <img alt="Silhouette of mountains" src="../../assets/eventos-img/{{datos.Imagen}}" />
    <ion-card-header>
-     <ion-card-title></ion-card-title>
+     <ion-card-title> {{datos.Nombre}} </ion-card-title>
    </ion-card-header>
- 
    <ion-card-content>
-     Descripcion del evento.
+     {{datos.Descripcion}}
    </ion-card-content>
  </ion-card>
- <ion-button fill="outline">Compra tu entrada</ion-button>
 
+<ion-button fill="outline">Compra tu entrada</ion-button><h1><ion-icon class="icono" name="heart-outline"></ion-icon></h1>
 
 </ion-content>

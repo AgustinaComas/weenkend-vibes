@@ -9,17 +9,19 @@
 
 <ion-content>
 
-    <ion-item  [routerLink]="['/eventos']" *ngFor="let item of searchedEvento" > 
+    <ion-item *ngFor="let item of Evento" [routerLink]="['/inicio', item.id]" > 
       <ion-thumbnail  slot="start">
         <img src="../../assets/eventos-img/{{ item.Imagen }}" class="Evento" />
       </ion-thumbnail>
-      <ion-label>
+      <ion-label >
         <h1>{{ item.Nombre }}</h1> 
         <p>{{ item.Descripcion }}</p>
       </ion-label>
-      <ion-icon slot="end" name="heart-outline"></ion-icon>
+      <ion-button fill="clear-icon">
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
     </ion-item>
-
+    
    
 
   </ion-content>

@@ -9,8 +9,8 @@ const routes: Routes = [
     component: InicioPage
   },
   {
-    path: ':evento',
-    loadChildren: () => import('../eventos/eventos.module').then( m => m.EventosPageModule)
+    path: ':EventoID',
+    loadChildren: () => import('./eventos/eventos.module').then( m => m.EventosPageModule)
   },
 
 ];
