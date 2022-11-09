@@ -1,24 +1,24 @@
 <ion-header no-border>
   <ion-toolbar >
     <h1 class="titulo"> Todos los eventos </h1>
-    <ion-searchbar search-icon="search-outline" placeholder="Busca un evento" clear-icon="close-circle-outline"
-    animated (ionChange)="searchEvents($event)" >
+    <ion-searchbar  search-icon="search-outline" placeholder="Busca un evento" clear-icon="close-circle-outline"
+    animated  >
   </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-item *ngFor="let item of Evento" [routerLink]="['/inicio', item.id]" > 
+    <ion-item *ngFor="let item of Evento" > 
       <ion-thumbnail  slot="start">
         <img src="../../assets/eventos-img/{{ item.Imagen }}" class="Evento" />
       </ion-thumbnail>
-      <ion-label >
+      <ion-label  [routerLink]="['/inicio', item.id]">
         <h1>{{ item.Nombre }}</h1> 
         <p>{{ item.Descripcion }}</p>
       </ion-label>
-      <ion-button fill="clear-icon">
-        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      <ion-button (click)="OnFavoritos(item.id)" fill="clear-icon">
+        <ion-icon slot="icon-only" name='{{item.favorito ? "heart" : "heart-outline"}}' ></ion-icon>
       </ion-button>
     </ion-item>
     

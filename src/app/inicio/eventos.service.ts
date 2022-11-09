@@ -4,29 +4,42 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EventosService {
-  private Evento = [
+  private Evento:evento[] = [
     { 
       id: '1',
       Nombre: "Disciplina tour Lali", 
-      Descripcion: "Show imperdible",
-      Imagen: "lalitour.img"
+      Descripcion: "LALI, la artista pop más importante de Argentina, anuncia su nuevo tour “Disciplina” en el Estadio Luna Park, el próximo 31 de julio.",
+      Imagen: "lalitour.img",
+      favorito: true
     },
     { 
       id: '2',
       Nombre: "Otto jueves", 
-      Descripcion: 'La fija del jueves',
+      Descripcion: 'El mejor boliche de los jueves en la noche rosarina. Boliche/Pub. #LaFijaDeLosJueves. Rosario, Argentina. ',
       Imagen: "otto.img"
      },
      { 
       id: '3',
       Nombre: "Minions: nace un villano", 
-      Descripcion: 'Distruta de esta pelicula en familia en el cine',
+      Descripcion: 'Distruta de esta pelicula en familia en el cine,Título original: “Minions; Nace un villano”; Estreno: 30.09.2022; Clasificación: Apta para todo público. ',
       Imagen: "minions.img"
      },
      { 
+      id: '4',
+      Nombre: "Fiesta de halloween , La chueka", 
+      Descripcion: 'Este sabado 29 de octubre a la fiesta de DISFRACES de halloween mas grande de Rosario en uno de los puntos mas lindos de la ciudad',
+      Imagen: "Halloween.img"
+     },
+     { 
+      id: '5',
+      Nombre: "El bar El Cairo ahora queda en Serrat y Fontanarrosa", 
+      Descripcion: 'El catalán, en el inicio de su última gira, llegó para nominar Santa Fe y Sarmiento con su nombre y el de su amigo, el Negro',
+      Imagen: "ElCairo.img"
+     },
+     {
       id: '6',
       Nombre: "Concierto Abel Pintos", 
-      Descripcion: 'El artista, uno de los más importantes de la escena argentina del último tiempo, llegará hoy al Autódromo rosarino con su gira "Abel en Concierto", en un recital que se destacará en la ciudad por medir y reducir su impacto a través de acciones ambientales.',
+      Descripcion: 'El artista, uno de los más importantes de la escena argentina del último tiempo, llegará hoy al Autódromo rosarino con su gira "Abel en Concierto", en un recital que se destacará en la ciudad por medir y reducir su impacto a través de acciones ambientales',
       Imagen: "Abel.img"
      },
      { 
@@ -35,7 +48,12 @@ export class EventosService {
       Descripcion: 'Startup Week Rosario es una semana de conversatorios, workshops, talleres y espacios de networking. Del 31/10 al 3/11 animate a convertirte en experto en Economía circular y colaborativa, Emprender, Construir comunidad y Las tecnologías que se vienen',
       Imagen: "Startup.img"
      },
-
+    { 
+      id: '8',
+      Nombre: "Concierto de TINI", 
+      Descripcion: 'TINI, TOUR 2022 HIPODROMO MUNICIPAL PARQUE INDEPENDENCIA, ROSARIO',
+      Imagen: "ConciertoTINI.img"
+     },
 
   ]
 
@@ -45,7 +63,7 @@ export class EventosService {
     return [...this.Evento]
   }
 
-  addEventos(Nombre: string, Descripcion: string,Imagen: string ){
+  addEventos(Nombre: string, Descripcion: string, Imagen: string ){
 this.Evento.push(
   {
     id: this.Evento.length + 1 + "",
@@ -63,4 +81,18 @@ this.Evento.push(
       })
     }
   }
+  toggleFavoritos(id:string){
+
+  }
+
+}
+
+
+
+export interface evento{
+  id:string
+  Nombre:string
+  Descripcion:string
+  Imagen:string
+  favorito?:boolean
 }

@@ -16,15 +16,16 @@
 <ion-content>
  
   <ion-card>
-   <img alt="Silhouette of mountains" src="../../assets/eventos-img/{{datos.Imagen}}" />
+   <img src="../../assets/eventos-img/{{datos.Imagen}}" />
    <ion-card-header>
      <ion-card-title> {{datos.Nombre}} </ion-card-title>
    </ion-card-header>
    <ion-card-content>
      {{datos.Descripcion}}
    </ion-card-content>
+   <span> </span>
+<ion-button class="boton" color="light" [routerLink]="['comprar']">Compra tu entrada</ion-button>
+   
  </ion-card>
-
-<ion-button fill="outline">Compra tu entrada</ion-button><h1><ion-icon class="icono" name="heart-outline"></ion-icon></h1>
 
 </ion-content>
