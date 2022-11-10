@@ -25,15 +25,23 @@ const routes: Routes = [
         loadChildren: () => import('../comprar/comprar.module').then( m => m.ComprarPageModule)
       },
       {
+        path: 'login',
+        loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)
+      },
+      {
+        path: 'registro',
+        loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/inicio',
+        redirectTo: '/tabs/login',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/inicio',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];

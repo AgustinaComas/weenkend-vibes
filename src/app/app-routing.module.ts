@@ -22,8 +22,14 @@ const routes: Routes = [
     path: 'comprar',
     loadChildren: () => import('./comprar/comprar.module').then( m => m.ComprarPageModule)
   },
-
-  
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
 
 
 

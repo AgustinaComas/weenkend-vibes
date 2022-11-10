@@ -5,7 +5,7 @@
       <ion-back-button 
       text=""
       color="dark" 
-      defaultHref="/inicio"
+      href="/tabs/inicio"
       icon="arrow-back">
     </ion-back-button>
     </ion-buttons>
@@ -22,6 +22,8 @@
    </ion-card-header>
    <ion-card-content>
      {{datos.Descripcion}}
+     <span></span>
+     <h2>${{datos.Precio}}</h2>
    </ion-card-content>
    <span> </span>
 <ion-button class="boton" color="light" (click)="agregaralcarrito()">Compra tu entrada</ion-button>

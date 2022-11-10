@@ -1,17 +1,21 @@
 .titulo {
-    /*padding-left: 15px;*/
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-
 }
 
 .calendario {
     margin: 25px;
+    //pointer-events: none;
 }
 
-ion-datetime {      
-    pointer-events: none;
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
+
+
 
 
 

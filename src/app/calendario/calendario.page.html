@@ -5,11 +5,29 @@
 </ion-header>
 
 <ion-content>
+ 
   <ion-datetime
   class="calendario"
   presentation="date"
   [multiple]="true"
-  [value]="['2022-06-03', '2022-06-13', '2022-06-29']"
-  [isDateEnabled]="true"
+  [value]="dates"
+  [isDateEnabled]="deshabilitarCalendario"
 ></ion-datetime>
+<ion-card>
+<ion-card-title>
+
+</ion-card-title>
+  <ion-card-content>
+<h2> 7/07/2022 Otto</h2>
+<h2> 20/07/2022 Minions</h2>
+<h2> 31/07/2022 Disciplina tour Lali</h2>
+<h2> 10/09/2022 Bar Cairio</h2>
+<h2> 13/10/2022 Tini</h2>
+<h2> 29/10/2022 Halloween</h2>
+<h2> 31/10/2022 Startup weekend</h2>
+<h2> 04/11/2022 Abel pintos</h2>
+</ion-card-content>
+</ion-card>
+
+
 </ion-content>
