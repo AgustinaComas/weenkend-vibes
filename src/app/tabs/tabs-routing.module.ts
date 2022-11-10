@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: () => import('../calendario/calendario.module').then(m => m.CalendarioPageModule)
       },
       {
+        path: 'comprar',
+        loadChildren: () => import('../comprar/comprar.module').then( m => m.ComprarPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/inicio',
         pathMatch: 'full'

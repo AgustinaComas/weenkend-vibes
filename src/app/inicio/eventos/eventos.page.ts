@@ -1,5 +1,5 @@
 import { Component, LOCALE_ID, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventosService } from '../eventos.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class EventosPage implements OnInit {
   
 
 
-  constructor(private Servicio: EventosService, private ActivatedRoute: ActivatedRoute) { }
+  constructor(private Servicio: EventosService, private ActivatedRoute: ActivatedRoute, private router: Router) { }
 
 private datos = {}
 
@@ -21,6 +21,10 @@ private datos = {}
     this.datos = this.Servicio.getEventosById( p.get('EventoID'))
     console.log()
   })
+  }
+  agregaralcarrito(){
+    this.Servicio.seteventocarrito( this.datos)
+    this.router.navigate(['/comprar'])
   }
  
     }

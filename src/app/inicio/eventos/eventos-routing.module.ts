@@ -8,10 +8,7 @@ const routes: Routes = [
     path: '',
     component: EventosPage
   },
-  {
-    path: ':EventoID',
-    loadChildren: () => import('./comprar/comprar.module').then( m => m.ComprarPageModule)
-  },
+ 
 ];
 
 @NgModule({

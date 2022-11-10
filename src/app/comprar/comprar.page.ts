@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventosService } from '../../eventos.service';
+import { EventosService } from '../inicio/eventos.service';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -10,14 +10,14 @@ import { AlertController } from '@ionic/angular';
 })
 export class ComprarPage implements OnInit {
 
-  constructor(private Servicio: EventosService, private activaedRoute: ActivatedRoute, private alertController: AlertController) { }
+  constructor(private Servicio: EventosService, private alertController: AlertController) { }
 
   ngOnInit() {
-  this.activaedRoute.paramMap.subscribe( p => {
-    console.log(p)
-  })
- 
+this.datos = this.Servicio.geteventocarrito()
   }
+datos=undefined
+
+
   async pago() {
     const alert = await this.alertController.create({
       header: 'Ingresa tus datos',

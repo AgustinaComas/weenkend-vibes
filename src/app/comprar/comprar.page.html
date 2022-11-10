@@ -1,13 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <h1 class="titulo">Compra tu entrada</h1>
-    <ion-back-button
-    slot="start" 
-      text=""
-      color="dark" 
-      defaultHref="/eventos"
-      icon="arrow-back">
-    </ion-back-button>
   </ion-toolbar>
 </ion-header>
 
@@ -15,15 +8,15 @@
   <ion-card>
     <ion-item>
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img src="../../assets/eventos-img/{{datos.Imagen}}" />
       </ion-thumbnail>
       <ion-label>
         <ion-card-header>
-          <ion-card-title>Titulo evento</ion-card-title>
+          <ion-card-title>{{datos.Nombre}}</ion-card-title>
         </ion-card-header>
       
         <ion-card-content>
-          <h1>$precio</h1>
+          <h1>$ {{datos.Precio}} </h1>
         </ion-card-content>
       </ion-label>
     </ion-item>
