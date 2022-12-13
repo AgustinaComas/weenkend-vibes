@@ -1,5 +1,7 @@
 import { PRECONNECT_CHECK_BLOCKLIST } from '@angular/common';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { IonItem } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,7 @@ export class EventosService {
       Descripcion: 'El mejor boliche de los jueves en la noche rosarina. Boliche/Pub. #LaFijaDeLosJueves. Rosario, Argentina. ',
       Imagen: "otto.img",
       favorito: false,
-      Precio: "$4.500"
+      Precio: "1.200"
      },
      { 
       id: '3',
@@ -29,7 +31,7 @@ export class EventosService {
       Descripcion: 'Distruta de esta pelicula en familia en el cine,Título original: “Minions; Nace un villano”; Estreno: 30.09.2022; Clasificación: Apta para todo público. ',
       Imagen: "minions.img",
       favorito: false,
-      Precio: "$4.500"
+      Precio: "500"
      },
      { 
       id: '4',
@@ -37,16 +39,16 @@ export class EventosService {
       Descripcion: 'Este sabado 29 de octubre a la fiesta de DISFRACES de halloween mas grande de Rosario en uno de los puntos mas lindos de la ciudad',
       Imagen: "Halloween.img",
       favorito: false,
-      Precio: "$4.500"
+      Precio: "2.000"
 
      },
      { 
       id: '5',
-      Nombre: "El bar El Cairo ahora queda en Serrat y Fontanarrosa", 
+      Nombre: "Bar El Cairo", 
       Descripcion: 'El catalán, en el inicio de su última gira, llegó para nominar Santa Fe y Sarmiento con su nombre y el de su amigo, el Negro',
       Imagen: "ElCairo.img",
       favorito: false,
-      Precio: "$4.500"
+      Precio: "1.000"
      },
      {
       id: '6',
@@ -54,7 +56,7 @@ export class EventosService {
       Descripcion: 'El artista, uno de los más importantes de la escena argentina del último tiempo, llegará hoy al Autódromo rosarino con su gira "Abel en Concierto", en un recital que se destacará en la ciudad por medir y reducir su impacto a través de acciones ambientales',
       Imagen: "Abel.img",
       favorito: false,
-      Precio: "$4.500"
+      Precio: "3.000"
      },
      { 
       id: '7',
@@ -62,21 +64,55 @@ export class EventosService {
       Descripcion: 'Startup Week Rosario es una semana de conversatorios, workshops, talleres y espacios de networking. Del 31/10 al 3/11 animate a convertirte en experto en Economía circular y colaborativa, Emprender, Construir comunidad y Las tecnologías que se vienen',
       Imagen: "Startup.img",
       favorito: false,
-      Precio: "$4.500"
+      Precio: "4.000"
      },
     { 
       id: '8',
+      Nombre: "YSY A concierto", 
+      Descripcion: 'YSY A EN ROSARIO PRESENTA EL HOMBRE SISMO',
+      Imagen: "ysya.img",
+      favorito: false,
+      Precio: "5.600"
+     },
+     { 
+      id: '9',
       Nombre: "Concierto de TINI", 
       Descripcion: 'TINI, TOUR 2022 HIPODROMO MUNICIPAL PARQUE INDEPENDENCIA, ROSARIO',
       Imagen: "ConciertoTINI.img",
       favorito: false,
-      Precio: "$4.500"
+      Precio: "5.500"
+     },
+     { 
+      id: '10',
+      Nombre: "Concierto Axel", 
+      Descripcion: 'El cantautor argentino presentará su Tour 2023, que repasará sus grandes éxitos e introducirá a su público con las novedades musicales del artista',
+      Imagen: "axel.img",
+      favorito: false,
+      Precio: "8.000"
+     },
+     { 
+      id: '11',
+      Nombre: "Avatar: el camino del agua", 
+      Descripcion: 'Esta pelicula narra la historia de la familia Sully (Jake, Neytiri y sus hijos), el peligro que los persigue, los esfuerzos que hacen para mantenerse a salvo, las batallas que libran para seguir con vida, y las tragedias que sobrellevan.',
+      Imagen: "avatar.img",
+      favorito: false,
+      Precio: "900"
+     },
+     { 
+      id: '12',
+      Nombre: "Festival de navidad", 
+      Descripcion: 'Un festival para pasar la navidad con amigos de pura fiesta. 2 escenarios confirmados con increíbles djs.',
+      Imagen: "navidad.img",
+      favorito: false,
+      Precio: "1800"
      },
 
   ]
-
-  constructor() { }
-
+  
+  constructor(private http: HttpClient) { }
+  
+ 
+  
   getEventos(){
     return [...this.Evento]
   }
@@ -112,9 +148,9 @@ this.eventocarrito = evento
   geteventocarrito(){
     return this.eventocarrito
   }
+
+
 }
-
-
 
 export interface evento{
   id:string
@@ -124,3 +160,12 @@ export interface evento{
   favorito?:boolean
   Precio:string
 }
+
+/*fetch("http://localhost:8080/evento", {
+  method: "POST",
+  headers: {
+    "content-type": "application/json",
+  } ,
+  body: kkm,
+});
+*/
