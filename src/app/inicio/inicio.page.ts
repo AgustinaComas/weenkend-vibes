@@ -51,7 +51,6 @@ this.eventos = evt;
   OnFavoritos( id:string) {
     //const eventoEditar:evento= this.Evento.filter( evento => evento.id===id)[0]
 this.Evento.forEach( evento => {if(evento.id===id  ) evento.favorito=!evento.favorito})
-
     console.log(id)
   }
 

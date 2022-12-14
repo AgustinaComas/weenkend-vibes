@@ -119,14 +119,14 @@ export class EventosService {
    })
    .catch(err => {throw err}); }
 
-  async getEventosInfo(eventoID:string): Promise<evento[]>
-  { return this.http.get("http://localhost:8080/evento/" + eventoID)
+  getEventosInfo(id:string): Promise<evento>
+  { return this.http.get("http://localhost:8080/evento/" + id)
    .toPromise()
    .then(resp=>{
-        const evt = resp as evento[]; return Promise.resolve(evt);
+        const evt = resp as evento; return Promise.resolve(evt);
    })
    .catch(err => {throw err}); }
-
+   
  /* addEventos(Nombre: string, Descripcion: string, Imagen: string, Precio:string ){
 this.Evento.push(
   {
@@ -136,9 +136,7 @@ this.Evento.push(
     Imagen: Imagen,
     Precio: Precio,
   }
-)
-  }
-
+)}
   getEventosById(eventoID: string){
     return{
       ...this.Evento.find(p => {
@@ -158,8 +156,6 @@ this.eventocarrito = evento
   geteventocarrito(){
     return this.eventocarrito
   }
-
-
 }
 
 export interface evento{

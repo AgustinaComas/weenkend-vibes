@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventosService } from '../inicio/eventos.service';
+import { evento, EventosService } from '../inicio/eventos.service';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -13,9 +13,15 @@ export class ComprarPage implements OnInit {
   constructor(private Servicio: EventosService, private alertController: AlertController) { }
 
   ngOnInit() {
-//this.datos = this.Servicio.geteventocarrito()
+ this.datos = this.Servicio.geteventocarrito()
   }
-datos=undefined
+datos: evento = {
+  id: '',
+  nombre: '',
+  descripcion: '',
+  imagen: 'imagen.png',
+  precio: ''
+}
 
 
   async pago() {

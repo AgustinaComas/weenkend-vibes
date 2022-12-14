@@ -13,25 +13,24 @@ export class EventosPage implements OnInit {
   
   constructor(private Servicio: EventosService, private ActivatedRoute: ActivatedRoute, private router: Router, private http: HttpClient) { }
 
-private datos = {}
+private datos: evento = {
+  id: '',
+  nombre: '',
+  descripcion: '',
+  imagen: 'imagen.png',
+  precio: ''
+}
 id: string = '';
 eventos: evento[];
 
   ngOnInit() {
-  this.ActivatedRoute.paramMap.subscribe(p => {
-    //console.log(p.get('EventoID'))
-    /*this.datos = this.Servicio.getEventosById( p.get('EventoID'))
-    console.log()*/
-  })
-  this.Servicio.getEventos()
-  .then(evt=> {
-    this.eventos = evt;
+     const sub = this.ActivatedRoute.params.subscribe(params =>{
+    this.Servicio.getEventosInfo(params["EventoID"]).then((resp:evento)=> this.datos = resp)
   })
   }
 
-
   agregaralcarrito(){
-    this.Servicio.seteventocarrito( this.datos)
+    this.Servicio.seteventocarrito(this.datos)
     this.router.navigate(['/comprar'])
   }
  
