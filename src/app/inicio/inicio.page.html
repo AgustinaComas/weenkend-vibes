@@ -9,16 +9,16 @@
 
 <ion-content>
 
-    <ion-item *ngFor="let item of Evento" > 
+    <ion-item *ngFor="let evt of eventos" > 
       <ion-thumbnail  slot="start">
-        <img src="../../assets/eventos-img/{{ item.Imagen }}" class="Evento" />
+        <img src="../../assets/eventos-img/{{ evt.imagen }}" class="Evento" />
       </ion-thumbnail>
-      <ion-label  [routerLink]="['/inicio', item.id]">
-        <h1>{{ item.Nombre }}</h1> 
-        <p>{{ item.Descripcion }}</p>
+      <ion-label  [routerLink]="['/inicio', evt.id]">
+        <h1>{{ evt.nombre }}</h1> 
+        <p>{{ evt.descripcion }}</p>
       </ion-label>
-      <ion-button (click)="OnFavoritos(item.id)" fill="clear-icon">
-        <ion-icon slot="icon-only" name='{{item.favorito ? "heart" : "heart-outline"}}' ></ion-icon>
+      <ion-button (click)="OnFavoritos(evt.id)" fill="clear-icon">
+        <ion-icon slot="icon-only" name='{{evt.favorito ? "heart" : "heart-outline"}}' ></ion-icon>
       </ion-button>
     </ion-item>
     <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">

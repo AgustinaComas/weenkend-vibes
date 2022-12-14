@@ -7,7 +7,7 @@ import { IonItem } from '@ionic/angular';
   providedIn: 'root'
 })
 export class EventosService {
-  private Evento:evento[] = [
+  /*private Evento:evento[] = [
     { 
       id: '1',
       Nombre: "Disciplina tour Lali", 
@@ -107,17 +107,27 @@ export class EventosService {
       Precio: "1800"
      },
 
-  ]
+ ]*/
   
   constructor(private http: HttpClient) { }
   
- 
-  
-  getEventos(){
-    return [...this.Evento]
-  }
+  async getEventos(): Promise<evento[]>
+  { return this.http.get("http://localhost:8080/evento")
+   .toPromise()
+   .then(resp=>{
+        const evt = resp as evento[]; return Promise.resolve(evt);
+   })
+   .catch(err => {throw err}); }
 
-  addEventos(Nombre: string, Descripcion: string, Imagen: string, Precio:string ){
+  async getEventosInfo(eventoID:string): Promise<evento[]>
+  { return this.http.get("http://localhost:8080/evento/" + eventoID)
+   .toPromise()
+   .then(resp=>{
+        const evt = resp as evento[]; return Promise.resolve(evt);
+   })
+   .catch(err => {throw err}); }
+
+ /* addEventos(Nombre: string, Descripcion: string, Imagen: string, Precio:string ){
 this.Evento.push(
   {
     id: this.Evento.length + 1 + "",
@@ -135,7 +145,7 @@ this.Evento.push(
         return p.id == eventoID
       })
     }
-  }
+  }*/
 
   toggleFavoritos(id:string){
 
@@ -154,18 +164,10 @@ this.eventocarrito = evento
 
 export interface evento{
   id:string
-  Nombre:string
-  Descripcion:string
-  Imagen:string
+  nombre:string
+  descripcion:string
+  imagen:string
   favorito?:boolean
-  Precio:string
+  precio:string
 }
 
-/*fetch("http://localhost:8080/evento", {
-  method: "POST",
-  headers: {
-    "content-type": "application/json",
-  } ,
-  body: kkm,
-});
-*/

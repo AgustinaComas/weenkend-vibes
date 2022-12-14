@@ -16,14 +16,14 @@
 <ion-content>
  
   <ion-card>
-   <img src="../../assets/eventos-img/{{datos.Imagen}}" />
+   <img src="../../assets/eventos-img/{{datos.imagen}}" />
    <ion-card-header>
-     <ion-card-title> {{datos.Nombre}} </ion-card-title>
+     <ion-card-title> {{datos.nombre}} </ion-card-title>
    </ion-card-header>
    <ion-card-content>
-     {{datos.Descripcion}}
+     {{datos.descripcion}}
      <span></span>
-     <h2>${{datos.Precio}}</h2>
+     <h2>${{datos.precio}}</h2>
    </ion-card-content>
    <span> </span>
 <ion-button class="boton" color="light" (click)="agregaralcarrito()">Compra tu entrada</ion-button>

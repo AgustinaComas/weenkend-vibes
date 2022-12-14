@@ -13,7 +13,7 @@ export class ComprarPage implements OnInit {
   constructor(private Servicio: EventosService, private alertController: AlertController) { }
 
   ngOnInit() {
-this.datos = this.Servicio.geteventocarrito()
+//this.datos = this.Servicio.geteventocarrito()
   }
 datos=undefined
 

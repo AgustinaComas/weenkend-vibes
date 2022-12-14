@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventosPageModule } from './eventos/eventos.module';
 import { EventosPage } from './eventos/eventos.page';
-import { evento, EventosService } from './eventos.service';
+import { EventosService } from './eventos.service';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
-
+import { HttpClient } from '@angular/common/http';
+import { evento } from './eventos.service';
 
 @Component({
   selector: 'app-inicio',
@@ -12,20 +13,27 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
   styleUrls: ['./inicio.page.scss'],
 })
 
-
-
 export class InicioPage implements OnInit {
   private Evento = []
+  items =[]
+  eventos: evento[] = [];
 
-  constructor(private Servicio: EventosService) {  }
- items =[]
- 
+constructor(private Service: EventosService, private http: HttpClient, private ActivatedRoute: ActivatedRoute) { }
+
   
   ngOnInit() {
-    this.Evento = this.Servicio.getEventos()
     this.generateItems();
+    this.getEventos();
   }
- 
+
+ getEventos(){
+    this.Service.getEventos()
+    .then(evt=> {
+this.eventos = evt;
+    })
+ }
+
+
   private generateItems() {
     const count = this.items.length + 1;
     for (let i = 0; i < 50; i++) {
@@ -38,6 +46,7 @@ export class InicioPage implements OnInit {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 500);
   }
+
 
   OnFavoritos( id:string) {
     //const eventoEditar:evento= this.Evento.filter( evento => evento.id===id)[0]

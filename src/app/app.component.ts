@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EventosService } from './inicio/eventos.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,9 @@ import { EventosService } from './inicio/eventos.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-http-client'
+ 
   constructor(
-    private EventoService
+   
   ) {}
 
   ngOnInit (){
